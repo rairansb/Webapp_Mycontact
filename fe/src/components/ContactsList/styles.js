@@ -11,7 +11,7 @@ justify-content: space-between;
 
 strong {
     font-size: 24px;
-    color: #222;
+    color: ${({ theme }) => theme.color.gray.gray900};
 }
 
 a {
@@ -34,11 +34,13 @@ export const ListContainer = Styled.div`
 margin-top: 24px;
 
 header{
+    margin-top: 8px;
     button {
     background: transparent;
     border: none;
     display: flex;
     align-items: center;
+    margin-bottom: 8px;
 
      span{
         font-size: 16px;
@@ -49,3 +51,56 @@ header{
     }
 }
 `;
+export const Card = Styled.div`
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & + & {
+        margin-top: 16px;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        .contact-name{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            small{
+                padding: 3px;
+                background: ${({ theme }) => theme.color.primary.lighter};
+                color: ${({ theme }) => theme.color.primary.main};
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 4px;
+            }
+
+        }
+        span{
+            color: ${({ theme }) => theme.color.gray.gray200};
+            font-size: 14px;
+
+         }
+    }
+
+    .actions{
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+
+        button{
+            background: transparent;
+            border: none;
+        }
+    }
+
+ `;

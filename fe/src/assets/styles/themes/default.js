@@ -8,5 +8,9 @@ export default {
       main: '#5061fc',
       dark: '#3346f0',
     },
+    gray: {
+      gray900: '#222222',
+      gray200: '#bcbcbc',
+    },
   },
 };
